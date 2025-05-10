@@ -2,26 +2,24 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Editor Admin</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/auth.js"></script>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
-    <div class="admin-container">
-        <h1>Editor Artikel</h1>
-        <!-- Form editor -->
-        <button id="logoutBtn">Logout</button>
+    <div class="admin-panel">
+        <header>
+            <h1>Editor Artikel</h1>
+            <button id="logoutBtn" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </header>
+
+        <form id="articleForm">
+            <!-- Form editor -->
+        </form>
     </div>
 
-    <script>
-        if(!checkAuth()) {
-            location.href = '../index.html';
-        }
-
-        document.getElementById('logoutBtn').addEventListener('click', () => {
-            logout();
-            location.href = '../index.html';
-        });
-    </script>
+    <script src="../js/auth.js" type="module"></script>
+    <script src="editor.js" type="module"></script>
 </body>
 </html>
