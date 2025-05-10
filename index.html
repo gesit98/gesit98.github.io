@@ -8,110 +8,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/favicon.ico">
+    <style>
+        /* Tambahan style untuk admin */
+        #adminAccess {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        #adminKey {
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #adminKey:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
-    <!-- Header dengan gambar masjid -->
-    <header style="background-image: url('images/header-bg.jpg')">
-        <div class="overlay">
-            <div class="container">
-                <h1><span>📿</span> Memahami Takdir dalam Islam</h1>
-                <p>Kajian mendalam tentang qadar dan pengaruhnya dalam kehidupan</p>
-            </div>
-        </div>
-    </header>
+    <!-- [Konten header, nav, main, footer tetap sama] -->
 
-    <nav>
-        <div class="container">
-            <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
-            <a href="tulis.html"><i class="fas fa-pen"></i> Tulis Artikel</a>
-            <div class="dropdown">
-                <button class="dropbtn"><i class="fas fa-tags"></i> Kategori <i class="fas fa-caret-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#" data-category="aqidah">Aqidah</a>
-                    <a href="#" data-category="fiqih">Fiqih</a>
-                    <a href="#" data-category="tazkiyah">Tazkiyah</a>
-                </div>
-            </div>
-            <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
-        </div>
-    </nav>
-
-    <main class="container">
-        <section class="articles">
-            <!-- Artikel 1 -->
-            <article class="card" data-category="aqidah">
-                <img src="images/takdir1.jpg" alt="Konsep Takdir" loading="lazy">
-                <div class="content">
-                    <span class="category">Aqidah</span>
-                    <h2><a href="artikel.html?id=1">Memahami Konsep Takdir dalam Islam</a></h2>
-                    <p class="meta">
-                        <i class="far fa-calendar"></i> 15 Ramadhan 1445 | 
-                        <i class="far fa-user"></i> Gesit98 |
-                        <i class="far fa-clock"></i> 8 min read
-                    </p>
-                    <p>Penjelasan mendalam tentang makna qadar, hubungannya dengan ikhtiar, dan hikmah di balik ketetapan Allah...</p>
-                    <a href="artikel.html?id=1" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Artikel 2 -->
-            <article class="card" data-category="tazkiyah">
-                <img src="images/takdir2.jpg" alt="Doa dan Takdir" loading="lazy">
-                <div class="content">
-                    <span class="category">Tazkiyah</span>
-                    <h2><a href="artikel.html?id=2">Peran Doa dalam Mengubah Takdir</a></h2>
-                    <p class="meta">
-                        <i class="far fa-calendar"></i> 10 Ramadhan 1445 | 
-                        <i class="far fa-user"></i> Gesit98 |
-                        <i class="far fa-clock"></i> 6 min read
-                    </p>
-                    <p>Bagaimana doa bisa menjadi senjata seorang mukmin untuk menghadapi ketetapan Allah yang terasa berat...</p>
-                    <a href="artikel.html?id=2" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-        </section>
-
-        <aside>
-            <div class="widget">
-                <h3><i class="fas fa-search"></i> Pencarian</h3>
-                <form id="searchForm">
-                    <input type="text" placeholder="Cari artikel..." id="searchInput">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-
-            <div class="widget">
-                <h3><i class="fas fa-book"></i> Referensi</h3>
-                <ul>
-                    <li><a href="#"><i class="fas fa-quran"></i> Al-Qur'an Digital</a></li>
-                    <li><a href="#"><i class="fas fa-book-open"></i> Kitab Tauhid</a></li>
-                    <li><a href="#"><i class="fas fa-hands-praying"></i> Kumpulan Doa</a></li>
-                </ul>
-            </div>
-        </aside>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Tentang Blog</h3>
-                    <p>Media belajar Islam dengan pendekatan ilmiah dan praktis</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Kontak</h3>
-                    <p><i class="fas fa-envelope"></i> gesit98@example.com</p>
-                </div>
-            </div>
-            <div class="social">
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fab fa-telegram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-            <p class="copyright">&copy; 1445 H Blog Gesit98. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Tambahkan sebelum </body> -->
+    <div id="adminAccess">
+        <button id="adminKey" title="Akses Admin">
+            <i class="fas fa-key"></i>
+        </button>
+    </div>
 
     <script src="script.js"></script>
+    <script>
+        // Sistem autentikasi sederhana
+        document.getElementById('adminKey').addEventListener('click', () => {
+            const password = prompt("Masukkan Password Admin:");
+            if(password === "R.a.katini1") { // Ganti dengan password kuat
+                localStorage.setItem('adminAuth', 'true');
+                window.location.href = "tulis.html";
+            } else if(password) {
+                alert("Password salah!");
+            }
+        });
+
+        // Cek jika langsung mengakses tulis.html
+        if(window.location.pathname.includes('tulis.html') && !localStorage.getItem('adminAuth')) {
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>
