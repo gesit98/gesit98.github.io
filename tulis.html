@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tulis Artikel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tulis Artikel Baru</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Beranda</a>
+        <a href="tulis.html">Tulis Artikel</a>
+    </nav>
+
+    <main>
+        <form id="formArtikel">
+            <label for="judul">Judul:</label>
+            <input type="text" id="judul" required>
+
+            <label for="konten">Isi Artikel:</label>
+            <textarea id="konten" rows="10" required></textarea>
+
+            <button type="submit">Simpan Artikel</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
