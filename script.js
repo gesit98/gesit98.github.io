@@ -1,52 +1,41 @@
-// Simpan artikel ke localStorage
-document.getElementById("formArtikel").addEventListener("submit", function(e) {
-    e.preventDefault();
+// Dark Mode Toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+// Cek preferensi user dari localStorage
+if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+}
+
+// Toggle Dark Mode
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
     
-    const judul = document.getElementById("judul").value;
-    const konten = document.getElementById("konten").value;
-    
-    // Buat objek artikel
-    const artikel = {
-        id: Date.now(),
-        judul,
-        konten,
-        tanggal: new Date().toLocaleDateString()
-    };
-    
-    // Ambil data yang sudah ada atau buat array baru
-    let semuaArtikel = JSON.parse(localStorage.getItem("artikel")) || [];
-    
-    // Tambahkan artikel baru
-    semuaArtikel.push(artikel);
-    
-    // Simpan ke localStorage
-    localStorage.setItem("artikel", JSON.stringify(semuaArtikel));
-    
-    alert("Artikel berhasil disimpan!");
-    window.location.href = "index.html";
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    }
 });
 
-// Tampilkan artikel di halaman utama
-function tampilkanArtikel() {
-    const semuaArtikel = JSON.parse(localStorage.getItem("artikel")) || [];
-    const mainElement = document.querySelector("main");
-    
-    if (mainElement && semuaArtikel.length > 0) {
-        mainElement.innerHTML = "";
-        
-        semuaArtikel.forEach(artikel => {
-            mainElement.innerHTML += `
-                <article>
-                    <h2>${artikel.judul}</h2>
-                    <p>${artikel.konten.substring(0, 100)}...</p>
-                    <small>${artikel.tanggal}</small>
-                </article>
-            `;
+// Animasi Scroll Halus
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
-    }
-}
+    });
+});
 
-// Jalankan saat halaman dimuat
-if (window.location.pathname.endsWith("index.html")) {
-    tampilkanArtikel();
-}
+// Simulasi Pencarian
+const searchInput = document.querySelector('.widget input[type="text"]');
+searchInput.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+        alert(`Sedang mencari: ${e.target.value}`);
+        e.target.value = '';
+    }
+});
