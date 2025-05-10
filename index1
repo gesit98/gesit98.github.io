@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Editor Admin</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/auth.js"></script>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Editor Artikel</h1>
+        <!-- Form editor -->
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <script>
+        if(!checkAuth()) {
+            location.href = '../index.html';
+        }
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            logout();
+            location.href = '../index.html';
+        });
+    </script>
+</body>
+</html>
