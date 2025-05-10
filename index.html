@@ -1,10 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Blog Gesit98</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Gesit98 | Kreatif & Inspiratif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
 </head>
 <body>
-    <h1>Selamat datang di blog saya!</h1>
-    <p>Website ini sedang dalam pengembangan.</p>
+    <header>
+        <div class="container">
+            <h1><span>✨</span> Blog Gesit98</h1>
+            <p>Tempat berbagi ide kreatif dan tutorial teknologi</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a>
+            <a href="tulis.html"><i class="fas fa-pen"></i> Tulis Artikel</a>
+            <a href="#kategori"><i class="fas fa-tags"></i> Kategori</a>
+            <a href="#tentang"><i class="fas fa-user"></i> Tentang</a>
+            <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="articles">
+            <article class="card">
+                <img src="https://source.unsplash.com/random/600x400/?tech" alt="Gambar Artikel">
+                <div class="content">
+                    <span class="category">Teknologi</span>
+                    <h2><a href="artikel.html">Cara Membuat Website Modern dengan HTML/CSS</a></h2>
+                    <p class="meta"><i class="far fa-calendar"></i> 11 Mei 2025 | <i class="far fa-user"></i> Gesit98</p>
+                    <p>Panduan lengkap untuk pemula yang ingin belajar web development dari dasar hingga mahir...</p>
+                    <a href="artikel.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://source.unsplash.com/random/600x400/?design" alt="Gambar Artikel">
+                <div class="content">
+                    <span class="category">Desain</span>
+                    <h2><a href="artikel.html">Prinsip Dasar Desain UI/UX 2025</a></h2>
+                    <p class="meta"><i class="far fa-calendar"></i> 10 Mei 2025 | <i class="far fa-user"></i> Gesit98</p>
+                    <p>10 konsep desain antarmuka yang wajib diketahui oleh semua designer pemula...</p>
+                    <a href="artikel.html" class="read-more">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </section>
+
+        <aside>
+            <div class="widget">
+                <h3><i class="fas fa-search"></i> Pencarian</h3>
+                <input type="text" placeholder="Cari artikel...">
+            </div>
+
+            <div class="widget">
+                <h3><i class="fas fa-tags"></i> Kategori</h3>
+                <ul>
+                    <li><a href="#">Teknologi <span>(12)</span></a></li>
+                    <li><a href="#">Desain <span>(8)</span></a></li>
+                    <li><a href="#">Bisnis <span>(5)</span></a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Blog Gesit98 | Dibuat dengan <i class="fas fa-heart"></i> dan JavaScript</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
