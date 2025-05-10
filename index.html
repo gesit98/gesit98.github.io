@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsep Takdir dalam Islam</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="images/mosque-icon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Memahami Konsep Takdir dalam Islam</h1>
+    <button id="theme-toggle">
+      <img src="images/mosque-icon.png" alt="Toggle Tema" width="30">
+    </button>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p><strong>Takdir</strong> adalah ketetapan Allah yang mencakup rezeki, jodoh, dan kehidupan manusia. Artikel ini menjelaskan hubungan antara takdir, ikhtiar, dan doa.</p>
+    </section>
+
+    <section>
+      <h2>Pengertian Takdir</h2>
+      <p>Berasal dari kata Arab <strong>قَدَر (qadar)</strong>, takdir adalah rencana Allah yang tertulis di Lauh Mahfuz.</p>
+      <blockquote>
+        "Dan segala sesuatu pada sisi-Nya ada ukurannya." (QS. Ar-Ra'd: 8)
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Ikhtiar & Tawakkal</h2>
+      <div class="comparison">
+        <div>
+          <h3>Ikhtiar</h3>
+          <p>Usaha maksimal manusia</p>
+        </div>
+        <div>
+          <h3>Tawakkal</h3>
+          <p>Berserah diri kepada Allah</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <h2>Doa Mengubah Takdir</h2>
+      <button id="dua-btn">Baca Doa</button>
+      <p id="dua-text" class="hidden">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 - Sumber Sahih: Al-Qur'an dan Hadits</p>
+  </footer>
+
+  <script src="assets/js/theme.js"></script>
+  <script>
+    // Interaksi doa
+    document.getElementById('dua-btn').addEventListener('click', function() {
+      document.getElementById('dua-text').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
