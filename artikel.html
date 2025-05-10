@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul Artikel - Blog Gesit98</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><span>✨</span> Blog Gesit98</h1>
+            <p>Tempat berbagi ide kreatif dan tutorial teknologi</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+            <a href="tulis.html"><i class="fas fa-pen"></i> Tulis Artikel</a>
+            <a href="#kategori"><i class="fas fa-tags"></i> Kategori</a>
+            <a href="#tentang"><i class="fas fa-user"></i> Tentang</a>
+            <button id="darkModeToggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <article class="article-detail">
+            <span class="category">Teknologi</span>
+            <h1>Cara Membuat Website Modern dengan HTML/CSS</h1>
+            
+            <div class="meta">
+                <span><i class="far fa-user"></i> Gesit98</span>
+                <span><i class="far fa-calendar"></i> 11 Mei 2025</span>
+                <span><i class="far fa-clock"></i> 5 min read</span>
+            </div>
+            
+            <img src="https://source.unsplash.com/random/1200x600/?tech" alt="Gambar Artikel" class="featured-image">
+            
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+                
+                <h2>Pendahuluan</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                
+                <h2>Langkah Pertama</h2>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <pre><code>
+/* Contoh kode CSS */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7ff;
+}
+                </code></pre>
+                
+                <h2>Kesimpulan</h2>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            
+            <div class="tags">
+                <a href="#"><i class="fas fa-tag"></i> HTML</a>
+                <a href="#"><i class="fas fa-tag"></i> CSS</a>
+                <a href="#"><i class="fas fa-tag"></i> Web Design</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Blog Gesit98 | Dibuat dengan <i class="fas fa-heart"></i> dan JavaScript</p>
+            <div class="social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Ambil data artikel dari URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+        
+        // Jika ada parameter ID, tampilkan artikel spesifik
+        if (articleId) {
+            const articles = JSON.parse(localStorage.getItem('artikel')) || [];
+            const article = articles.find(a => a.id == articleId);
+            
+            if (article) {
+                document.title = article.judul + ' - Blog Gesit98';
+                document.querySelector('.article-detail .category').textContent = article.kategori;
+                document.querySelector('.article-detail h1').textContent = article.judul;
+                document.querySelector('.featured-image').src = article.gambar;
+                document.querySelector('.content').innerHTML = article.konten;
+                document.querySelector('.meta span:nth-child(2)').innerHTML = '<i class="far fa-calendar"></i> ' + article.tanggal;
+            }
+        }
+    </script>
+</body>
+</html>
